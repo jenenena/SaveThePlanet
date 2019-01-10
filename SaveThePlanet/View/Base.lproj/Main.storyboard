@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Impact View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ImpactViewController" customModule="SaveThePlanet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="UmO-FR-9PL">
+                                <rect key="frame" x="16" y="20" width="343" height="241"/>
+                            </mapView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="RecycleOutline" translatesAutoresizingMaskIntoConstraints="NO" id="A01-Ea-NhV">
+                                <rect key="frame" x="16" y="315" width="343" height="188"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="188" id="caF-m2-htS"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Global App" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QN0-7j-BCX">
+                                <rect key="frame" x="16" y="511" width="343" height="136"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="136" id="Vmw-iX-Hwr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSg-Ji-nde">
+                                <rect key="frame" x="165" y="269" width="337" height="30"/>
+                                <state key="normal" title="Go!"/>
+                                <connections>
+                                    <action selector="animateClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uoU-6J-eVf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="A01-Ea-NhV" firstAttribute="trailing" secondItem="QN0-7j-BCX" secondAttribute="trailing" id="8ZJ-AW-Dy6"/>
+                            <constraint firstItem="PSg-Ji-nde" firstAttribute="centerX" secondItem="A01-Ea-NhV" secondAttribute="centerX" id="9n1-A2-b25"/>
+                            <constraint firstItem="A01-Ea-NhV" firstAttribute="top" secondItem="PSg-Ji-nde" secondAttribute="bottom" constant="16" id="Ceg-iJ-T2i"/>
+                            <constraint firstItem="UmO-FR-9PL" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Jhj-f6-JDG"/>
+                            <constraint firstItem="PSg-Ji-nde" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="165" id="Kvb-6w-fqR"/>
+                            <constraint firstItem="UmO-FR-9PL" firstAttribute="leading" secondItem="A01-Ea-NhV" secondAttribute="leading" id="P4X-on-YyW"/>
+                            <constraint firstItem="A01-Ea-NhV" firstAttribute="leading" secondItem="QN0-7j-BCX" secondAttribute="leading" id="aJh-gG-YBt"/>
+                            <constraint firstItem="UmO-FR-9PL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="bLA-au-LT9"/>
+                            <constraint firstItem="UmO-FR-9PL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="cAm-5f-71F"/>
+                            <constraint firstItem="QN0-7j-BCX" firstAttribute="top" secondItem="A01-Ea-NhV" secondAttribute="bottom" constant="8" symbolic="YES" id="d6g-dY-cdE"/>
+                            <constraint firstAttribute="bottom" secondItem="QN0-7j-BCX" secondAttribute="bottom" constant="20" symbolic="YES" id="dli-Z6-XpW"/>
+                            <constraint firstItem="PSg-Ji-nde" firstAttribute="top" secondItem="UmO-FR-9PL" secondAttribute="bottom" constant="8" symbolic="YES" id="qhx-W8-Cpk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="animateButton" destination="PSg-Ji-nde" id="owU-hQ-wcd"/>
+                        <outlet property="impactImage" destination="A01-Ea-NhV" id="ivK-J1-a7q"/>
+                        <outlet property="mapView" destination="UmO-FR-9PL" id="stF-Bu-UgB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="133.59999999999999" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="RecycleOutline" width="635" height="257"/>
+    </resources>
+</document>
